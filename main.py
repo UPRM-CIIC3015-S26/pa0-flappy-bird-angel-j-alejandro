@@ -1,5 +1,12 @@
 import pygame, random
 pygame.init()
+pygame.mixer.init()
+score_sfx = pygame.mixer.Sound('jump.wav')
+jump_sfx = pygame.mixer.Sound('Click.wav')
+
+pygame.mixer.music.load('song.wav')
+pygame.mixer.music.play()
+pygame.mixer.music.play(-1)
 '''
 Welcome to PA0 – Flappy Bird! Throughout this code, you are going to find a recreation of a game you have probably
 heard of before. This is an introductory assignment designed to help you familiarize yourself with what you can expect 
@@ -36,22 +43,19 @@ score_y = 10
 bird_x = 50
 bird_y = 300
 bird_velocity = 0
-# TODO 1: Tweaking the physics
 # Looks like the player is falling too quickly not giving a change to flap it's wing, maybe tweak around with the value of this variable
 gravity = 1.5
 jump = -20
 # Pipe Variables -->
 pipe_x = 400
 pipe_width = 70
-# TODO 2.1: A Little gap Problem
 # You probably noticed when running the code that it's impossible the player to go through the gaps
 # play around with the pipe_gap variable so that its big enough for the player to pass through
 pipe_gap = 200
 pipe_height = random.randint(100, 400)
-# TODO 2.2: The too fast problem
 # The pipes are moving way too fast! Play around with the pipe_speed variable until you find a good
 # speed for the player to play in!
-pipe_speed = 5
+pipe_speed = 4
 
 score = 0
 game_over = False
@@ -61,25 +65,25 @@ clock = pygame.time.Clock()
 
 running = True
 while running:
-    # TODO 6: Changing the name!
-    # D'oh! This is not yout name isn't follow the detailed instructions on the PDF to complete this task.
-    name = "Homer Simpson"
+    # D'oh! This is not your name isn't follow the detailed instructions on the PDF to complete this task.
+    name = "Angel J. Cruz Lopez"
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE:
+                jump_sfx.play()
                 if game_started == False:
                     game_started = True
                     bird_velocity = jump
                 elif game_over == False:
                     bird_velocity = jump
                 else:
-                    # TODO 3: Spawning back the Player
                     # After the bird crashes with a pipe the when spawning back the player it doesn't appear.
                     # It is your job to find why this is happening! (Hint: What variable stores the y coordinates
                     # of the bird)
                     bird_velocity = 0
+                    bird_y = 300
                     pipe_x = 400
                     score = 0
                     game_over = False
@@ -94,10 +98,10 @@ while running:
         if pipe_x < -70:
             pipe_x = 400
             pipe_height = random.randint(100, 400)
-            # TODO 4: Fixing the scoring
             # When you pass through the pipes the score should be updated to the current score + 1. Implement the
             # logic to accomplish this scoring system.
-            score = 1
+            score += 1
+            score_sfx.play()
 
         if bird_y > 600 or bird_y < 0:
             game_over = True
