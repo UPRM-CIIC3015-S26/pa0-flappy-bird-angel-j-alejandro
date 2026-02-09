@@ -13,7 +13,7 @@ pygame.display.set_caption("Flappy Bird")
 
 # Colors -->
 # NOTE: This is in the RGB (Red, Green, Blue) format
-WHITE = (255, 255, 255)
+BROWN = (68, 53, 39)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 PLAYER = (255, 255, 255)
@@ -116,17 +116,17 @@ while running:
     pygame.draw.rect(screen, PLAYER, (bird_x, bird_y, 30, 30)) # Drawing the bird (You don't need to touch this line!)
     pygame.draw.rect(screen, GREEN, (pipe_x, 0, pipe_width, pipe_height))
     pygame.draw.rect(screen, GREEN, (pipe_x, pipe_height + pipe_gap, pipe_width, 600))
-    score_text = small_font.render(str(score), True, WHITE)
+    score_text = small_font.render(str(score), True, BROWN)
     screen.blit(score_text, (score_x, score_y))
 
     if game_started == False: # Start UI -->
-        title_text = big_font.render("Flappy Bird", True, WHITE)
-        instruction_text = small_font.render("Press space bar to flap!", True, WHITE)
+        title_text = big_font.render("Flappy Bird", True, BROWN)
+        instruction_text = small_font.render("Press space bar to flap!", True, BROWN)
         screen.blit(title_text, (title_x, title_y))
         screen.blit(instruction_text, (instruction_x, instruction_y))
 
     if game_over: # GameOver UI -->
-        loss_text = small_font.render("Press Space to restart...", True, WHITE)
+        loss_text = small_font.render("Press Space to restart...", True, BROWN)
         screen.blit(loss_text, (85, 200))
 
     pygame.display.update()
