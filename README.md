@@ -19,9 +19,9 @@ The project is designed as an introductory programming assignment (PA0). Most of
 - **Email: angel.cruz57@gmail.com**
 
 ### Partner #2
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name: Alejandro Castro Rivera**
+- **Student Number: 802-25-1611**
+- **Email: noel.castro@upr.edu**
 
 ## ⭐ Bonus Features (Optional)
 List and briefly describe any additional features or enhancements implemented beyond the basic requirements.
