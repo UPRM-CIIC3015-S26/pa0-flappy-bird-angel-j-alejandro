@@ -14,9 +14,9 @@ The project is designed as an introductory programming assignment (PA0). Most of
 ## 👥 Team Information
 
 ### Partner #1
-- **Name:**
-- **Student Number:**
-- **Email:**
+- **Name:Angel J. Cruz Lopez**
+- **Student Number: 802-25-2643**
+- **Email: angel.cruz57@gmail.com**
 
 ### Partner #2
 - **Name:**
