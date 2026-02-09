@@ -13,7 +13,7 @@ pygame.display.set_caption("Flappy Bird")
 
 # Colors -->
 # NOTE: This is in the RGB (Red, Green, Blue) format
-BROWN =  (68, 53, 39)
+BROWN = (68, 53, 39)
 GREEN = (0, 255, 0)
 BLACK = (0, 0, 0)
 PLAYER = (255, 255, 255)
